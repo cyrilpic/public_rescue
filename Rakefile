@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/cyrilpic/errorlogic"
   gem.license = "MIT"
   gem.summary = %Q{Rails3 gem for diplaying dynamic error pages.}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{longer description of your gem}
   gem.email = "Cyril@picard.ch"
   gem.authors = ["Cyril Picard"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

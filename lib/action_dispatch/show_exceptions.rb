@@ -19,7 +19,7 @@ module ActionDispatch
       status = status_code(exception)
       if status == 404
         action = @@rescue_responses[exception.class.name]
-        response = PublicErrorsController.action(action).call(request.env).last
+        response = Errorlogic::PublicErrorsController.action(action).call(request.env).last
         render(status, response.body)
       else
         super(exception)
