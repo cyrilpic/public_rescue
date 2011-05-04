@@ -29,12 +29,14 @@ If you need to have access to the controller, you can run :
 	
 This will generate a controller that inherits from Errorlogic::PublicErrorsController and install the views into app/views/NAME. In the controller you have access to the <tt>env['errorlogic.exception_details']</tt> variable which contains additional information about the exception :
 
-* :request,
-* :exception,
-* :status,
-* :application_trace,
-* :framework_trace,
-* :full_trace
+	env['errorlogic.exception_details'] =	{
+		:request,
+  	:exception,
+  	:status,
+  	:application_trace,
+  	:framework_trace,
+  	:full_trace
+	}
 
 == TODO
 
