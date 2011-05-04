@@ -1,17 +1,16 @@
-module ActionDispatch
+module Errorlogic
   # We subclass this middleware to render nice dynamic error pages instead of classical 404.html,... files
-  class ShowExceptions
+  class ShowExceptions << ActionDispatch::ShowExceptions
     private
     # By default render_exception doesn't send the request object to rescue_action_in_public.
     # Here we just store the env variable in a class variable so we can retrieve it later.
-    def render_exception_with_env_hook(env, exception)
+    def render_exception(env, exception)
       @env = env
       # Original rails code is always best
-      render_exception_without_env_hook(env,exception)
+      super
     end
-    alias_method_chain :render_exception, :env_hook
     
-    def rescue_action_in_public_with_dynamic(exception)
+    def rescue_action_in_public(exception)
       request = Request.new(@env)
       status = status_code(exception)
       exception_details = {
@@ -24,15 +23,17 @@ module ActionDispatch
       request.env['errorlogic.exception_details'] = exception_details
       action = @@rescue_responses[exception.class.name]
       begin
-        controller = PublicErrorsController || Errorlogic::PublicErrorsController;
-        response = controller.action(action).call(request.env).last
-        render(status, response.body)
-      # Any exceptions results in calling the parent method
-      rescue Exception => e
-        log_error(e)
-        rescure_action_in_public_without_dynamic(excpetion)
+        controller = PublicErrorsController
+      rescue NameError => n_E
+        controller = Errorlogic::PublicErrorsController
       end
+      response = controller.action(action).call(request.env).last
+      render(status, response.body)
+        
+    # Any exceptions results in calling the parent method
+    rescue Exception => e
+      log_error(e)
+      super(exception)
     end
-    alias_method_chain :rescue_action_in_public, :dynamic
   end
 end

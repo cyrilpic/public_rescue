@@ -12,6 +12,8 @@ class Errorlogic::PublicErrorsController < ApplicationController
   #  :full_trace
   # }
   
+  # add after filter for error pages
+  
   # 404
   def not_found
   end

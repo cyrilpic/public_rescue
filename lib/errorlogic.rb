@@ -1,9 +1,11 @@
 #Errorlogic.rb
-
-require 'action_dispatch/show_exceptions'
+require 'rails'
+require 'active_support/dependencies/autoload'
+require 'action_dispatch'
 
 module Errorlogic
-    class Engine < Rails::Engine
-        
-    end
+  extend ActiveSupport::Autoload
+  autoload :ShowExceptions
 end
+
+require 'errorlogic/rails'
