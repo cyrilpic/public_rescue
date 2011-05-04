@@ -7,7 +7,7 @@ module PublicRescue
         config.public_rescue.controller = :public_errors
         
         initializer "devise.add_middleware" do |app|
-            app.middleware.swap ActionDispatch::ShowExceptions, Errorlogic::ShowExceptions
+            app.middleware.swap ActionDispatch::ShowExceptions, PublicRescue::ShowExceptions
         end
         
         
