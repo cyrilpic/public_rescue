@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{public_rescue}
-  s.version = "0.2.3"
+  s.version = "0.2.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cyril Picard"]
@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
     "lib/public_rescue.rb",
     "lib/public_rescue/rails.rb",
     "lib/public_rescue/show_exceptions.rb",
+    "public_rescue-0.2.3.gem",
     "public_rescue.gemspec",
     "test/helper.rb",
     "test/test_public_rescue.rb"
