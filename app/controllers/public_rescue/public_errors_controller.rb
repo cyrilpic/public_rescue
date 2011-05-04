@@ -1,4 +1,4 @@
-class Errorlogic::PublicErrorsController < ApplicationController
+class PublicRescue::PublicErrorsController < ApplicationController
   # This is just a very basic controller
   # For custom methods just create our own PublicErrorsController which subclasses this one
   

@@ -1,6 +1,6 @@
 = errorlogic
 
-Errorlogic is a gem for rails application who want to display dynamic error pages.
+PublicRescue is a gem for rails application who want to display dynamic error pages.
 It creates a new Rack middleware which replaces <tt>ActionDispatch::ShowExceptions</tt> and overwrites the rescue_action_in_public method. 
 
 == Requirements
@@ -11,25 +11,25 @@ It creates a new Rack middleware which replaces <tt>ActionDispatch::ShowExceptio
 
 This library is intended to be installed as a gem
 	
-	$ gem install errorlogic
+	$ gem install public_rescue
 
-After you installed Errorlogic, you need to add it to your Gemfile and you're done ! It will use the default views included with Errorlogic.
+After you installed PublicRescue, you need to add it to your Gemfile and you're done ! It will use the default views included with PublicRescue.
 
 == Customization
 
-Errorlogic comes with 2 generators.
+PublicRescue comes with 2 generators.
 
-	$ rails g errorlogic:views
+	$ rails g public_rescue:views
 	
-This will install all views into app/view/errorlogic/public_errors. You can now customize your views.
+This will install all views into app/view/public_rescue/public_errors. You can now customize your views.
 
 If you need to have access to the controller, you can run :
 
-	$ rails g errorlogic NAME
+	$ rails g public_rescue NAME
 	
-This will generate a controller that inherits from Errorlogic::PublicErrorsController and install the views into app/views/NAME. In the controller you have access to the <tt>env['errorlogic.exception_details']</tt> variable which contains additional information about the exception :
+This will generate a controller that inherits from PublicRescue::PublicErrorsController and install the views into app/views/NAME. In the controller you have access to the <tt>env['public_rescue.exception_details']</tt> variable which contains additional information about the exception :
 
-	env['errorlogic.exception_details'] =	{
+	env['public_rescue.exception_details'] =	{
 		:request,
   	:exception,
   	:status,
@@ -42,7 +42,7 @@ This will generate a controller that inherits from Errorlogic::PublicErrorsContr
 
 I should probably write some true tests...
 
-== Contributing to errorlogic
+== Contributing to public_rescue
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it

@@ -1,4 +1,4 @@
-class <%= class_name %>Controller < Errorlogic::PublicErrorsController
+class <%= class_name %>Controller < PublicRescue::PublicErrorsController
   # 404
   def not_found
   end

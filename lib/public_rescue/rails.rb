@@ -1,10 +1,10 @@
-require 'errorlogic'
+require 'public_rescue'
 
-module Errorlogic
+module PublicRescue
     class Engine < Rails::Engine
       
-        config.errorlogic = ActiveSupport::OrderedOptions.new
-        config.errorlogic.controller = :public_errors
+        config.public_rescue = ActiveSupport::OrderedOptions.new
+        config.public_rescue.controller = :public_errors
         
         initializer "devise.add_middleware" do |app|
             app.middleware.swap ActionDispatch::ShowExceptions, Errorlogic::ShowExceptions

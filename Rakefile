@@ -12,11 +12,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "errorlogic"
-  gem.homepage = "http://github.com/cyrilpic/errorlogic"
+  gem.name = "public_rescue"
+  gem.homepage = "http://github.com/cyrilpic/public_rescue"
   gem.license = "MIT"
   gem.summary = %Q{Rails3 gem for displaying dynamic error pages.}
-  gem.description = %Q{Errorlogic is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method.}
+  gem.description = %Q{PublicRescue is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method.}
   gem.email = "Cyril@picard.ch"
   gem.authors = ["Cyril Picard"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

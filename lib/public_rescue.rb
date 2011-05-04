@@ -3,10 +3,10 @@ require 'rails'
 require 'active_support/dependencies/autoload'
 require 'action_dispatch'
 
-module Errorlogic
+module PublicRescue
   extend ActiveSupport::Autoload
   autoload :ShowExceptions
   autoload :PublicErrorsController
 end
 
-require 'errorlogic/rails'
+require 'public_rescue/rails'

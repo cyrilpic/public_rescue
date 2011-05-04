@@ -1,13 +1,13 @@
-module Errorlogic
+module PublicRescue
   module Generators
     class ViewsGenerator < Rails::Generators::Base
       source_root File.expand_path("../../../../app/views", __FILE__)
-      desc "Copies all Errorlogic views to your application."
+      desc "Copies all PublicRescue views to your application."
 
       argument :scope, :required => false, :default => nil,
                        :desc => "The scope to copy views to"
       def copy_views
-        directory "errorlogic", "app/views/#{scope || :errorlogic}"
+        directory "public_rescue", "app/views/#{scope || :public_rescue}"
       end
     end
   end

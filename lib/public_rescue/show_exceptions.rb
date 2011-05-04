@@ -1,4 +1,4 @@
-module Errorlogic
+module PublicRescue
   # We subclass this middleware to render nice dynamic error pages instead of classical 404.html,... files
   class ShowExceptions < ActionDispatch::ShowExceptions
     private
@@ -20,9 +20,9 @@ module Errorlogic
               :framework_trace => framework_trace(exception),
               :full_trace => full_trace(exception)
       }
-      request.env['errorlogic.exception_details'] = exception_details
+      request.env['public_rescue.exception_details'] = exception_details
       action = @@rescue_responses[exception.class.name]
-      controller_name = Rails.configuration.errorlogic.controller.to_s.camelize << 'Controller'
+      controller_name = Rails.configuration.public_rescue.controller.to_s.camelize << 'Controller'
       begin
         controller = Rails.const_get(controller_name)
       rescue NameError => n_E
