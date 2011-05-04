@@ -23,13 +23,15 @@ module ActionDispatch
       }
       request.env['errorlogic.exception_details'] = exception_details
       action = @@rescue_responses[exception.class.name]
-      controller = PublicErrorsController || Errorlogic::PublicErrorsController;
-      response = controller.action(action).call(request.env).last
-      render(status, response.body)
-    # Any exceptions results in calling the parent method
-    rescue Exception => e
-      log_error(e)
-      rescure_action_in_public_without_dynamic(excpetion)
+      begin
+        controller = PublicErrorsController || Errorlogic::PublicErrorsController;
+        response = controller.action(action).call(request.env).last
+        render(status, response.body)
+      # Any exceptions results in calling the parent method
+      rescue Exception => e
+        log_error(e)
+        rescure_action_in_public_without_dynamic(excpetion)
+      end
     end
     alias_method_chain :rescue_action_in_public, :dynamic
   end
