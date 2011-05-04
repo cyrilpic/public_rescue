@@ -1,6 +1,6 @@
 module Errorlogic
   # We subclass this middleware to render nice dynamic error pages instead of classical 404.html,... files
-  class ShowExceptions << ActionDispatch::ShowExceptions
+  class ShowExceptions < ActionDispatch::ShowExceptions
     private
     # By default render_exception doesn't send the request object to rescue_action_in_public.
     # Here we just store the env variable in a class variable so we can retrieve it later.
@@ -11,7 +11,7 @@ module Errorlogic
     end
     
     def rescue_action_in_public(exception)
-      request = Request.new(@env)
+      request = ActionDispatch::Request.new(@env)
       status = status_code(exception)
       exception_details = {
               :request => request, :exception => exception,
@@ -25,6 +25,7 @@ module Errorlogic
       begin
         controller = PublicErrorsController
       rescue NameError => n_E
+        log_error(n_E)
         controller = Errorlogic::PublicErrorsController
       end
       response = controller.action(action).call(request.env).last
