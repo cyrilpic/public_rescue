@@ -1,7 +1,7 @@
 = errorlogic
 
 Errorlogic is a gem for rails application who want to display dynamic error pages.
-It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method. 
+It creates a new Rack middleware which replaces <tt>ActionDispatch::ShowExceptions</tt> and overwrites the rescue_action_in_public method. 
 
 == Requirements
 
@@ -27,7 +27,7 @@ If you need to have access to the controller, you can run :
 
 	$ rails g errorlogic NAME
 	
-This will generate a controller that inherits from Errorlogic::PublicErrorsController and install the views into app/views/NAME. In the controller you have access to the env\['errorlogic.exception_details'] variable which contains additional information about the exception :
+This will generate a controller that inherits from Errorlogic::PublicErrorsController and install the views into app/views/NAME. In the controller you have access to the <tt>env['errorlogic.exception_details']</tt> variable which contains additional information about the exception :
 
 * :request,
 * :exception,
