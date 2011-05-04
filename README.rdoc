@@ -1,11 +1,11 @@
-= errorlogic
+= PublicRescue
 
 PublicRescue is a gem for rails application who want to display dynamic error pages.
 It creates a new Rack middleware which replaces <tt>ActionDispatch::ShowExceptions</tt> and overwrites the rescue_action_in_public method. 
 
 == Requirements
 
-* Rails >= 3.0.0
+* Rails ~> 3.0.0
 
 == Installation
 

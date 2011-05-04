@@ -1,4 +1,4 @@
-#Errorlogic.rb
+#PublicRecscue.rb
 require 'rails'
 require 'active_support/dependencies/autoload'
 require 'action_dispatch'
