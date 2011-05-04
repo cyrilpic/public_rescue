@@ -4,14 +4,14 @@ module ActionDispatch
     private
     # By default render_exception doesn't send the request object to rescue_action_in_public.
     # Here we just store the env variable in a class variable so we can retrieve it later.
-    def render_exception(env, exception)
+    def render_exception_with_env_hook(env, exception)
       @env = env
       # Original rails code is always best
-      super(env,exception)
+      render_exception_without_env_hook(env,exception)
     end
+    alias_method_chain :render_exception, :env_hook
     
-    
-    def rescue_action_in_public(exception)
+    def rescue_action_in_public_with_dynamic(exception)
       request = Request.new(@env)
       status = status_code(exception)
       exception_details = {
@@ -26,12 +26,11 @@ module ActionDispatch
       controller = PublicErrorsController || Errorlogic::PublicErrorsController;
       response = controller.action(action).call(request.env).last
       render(status, response.body)
-      end
     # Any exceptions results in calling the parent method
     rescue Exception => e
       log_error(e)
-      super(excpetion)
+      rescure_action_in_public_without_dynamic(excpetion)
     end
-    
+    alias_method_chain :rescue_action_in_public, :dynamic
   end
 end
