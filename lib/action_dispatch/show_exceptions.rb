@@ -14,6 +14,14 @@ module ActionDispatch
     def rescue_action_in_public(exception)
       request = Request.new(@env)
       status = status_code(exception)
+      exception_details = {
+              :request => request, :exception => exception,
+              :status => status,
+              :application_trace => application_trace(exception),
+              :framework_trace => framework_trace(exception),
+              :full_trace => full_trace(exception)
+      }
+      request.env['errorlogic.exception_details'] = exception_details
       action = @@rescue_responses[exception.class.name]
       controller = PublicErrorsController || Errorlogic::PublicErrorsController;
       response = controller.action(action).call(request.env).last
