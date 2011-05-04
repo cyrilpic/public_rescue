@@ -16,13 +16,15 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/cyrilpic/errorlogic"
   gem.license = "MIT"
   gem.summary = %Q{Rails3 gem for diplaying dynamic error pages.}
-  gem.description = %Q{longer description of your gem}
+  gem.description = %Q{Errorlogic is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method.}
   gem.email = "Cyril@picard.ch"
   gem.authors = ["Cyril Picard"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_runtime_dependency 'rails', '> 3.0.0'
+  
 end
 Jeweler::RubygemsDotOrgTasks.new
 

@@ -22,7 +22,7 @@ module Errorlogic
       }
       request.env['errorlogic.exception_details'] = exception_details
       action = @@rescue_responses[exception.class.name]
-      controller_name = Rails.config.errorlogic.controller.to_s.camelize << 'Controller'
+      controller_name = Rails.configuration.errorlogic.controller.to_s.camelize << 'Controller'
       begin
         controller = Rails.const_get(controller_name)
       rescue NameError => n_E
