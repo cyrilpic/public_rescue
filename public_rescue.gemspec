@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{public_rescue}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cyril Picard"]
-  s.date = %q{2011-05-04}
+  s.date = %q{2011-05-12}
   s.description = %q{PublicRescue is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method.}
   s.email = %q{Cyril@picard.ch}
   s.extra_rdoc_files = [
@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
     "lib/public_rescue.rb",
     "lib/public_rescue/rails.rb",
     "lib/public_rescue/show_exceptions.rb",
-    "public_rescue-0.2.3.gem",
+    "public_rescue-0.2.4.gem",
     "public_rescue.gemspec",
     "test/helper.rb",
     "test/test_public_rescue.rb"
@@ -53,20 +53,20 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0.0"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["~> 3.0.0"])
+      s.add_dependency(%q<rails>, ["~> 3.0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 3.0.0"])
+    s.add_dependency(%q<rails>, ["~> 3.0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
