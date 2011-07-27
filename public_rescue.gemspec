@@ -34,7 +34,6 @@ Gem::Specification.new do |s|
     "lib/public_rescue.rb",
     "lib/public_rescue/rails.rb",
     "lib/public_rescue/show_exceptions.rb",
-    "public_rescue-0.2.4.gem",
     "public_rescue.gemspec",
     "test/helper.rb",
     "test/test_public_rescue.rb"
