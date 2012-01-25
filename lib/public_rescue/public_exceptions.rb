@@ -25,7 +25,6 @@ module PublicRescue
       end
       response = controller.action(action).call(request.env).last
       render(status, response.body)
-      
     end
     
     private

@@ -7,6 +7,7 @@ module PublicRescue
   extend ActiveSupport::Autoload
   autoload :ShowExceptions
   autoload :PublicErrorsController
+  autoload :PublicExceptions
 end
 
 require 'public_rescue/rails'
