@@ -6,7 +6,7 @@ module PublicRescue
         config.public_rescue = ActiveSupport::OrderedOptions.new
         config.public_rescue.controller = :public_errors
         
-        if Rails.VERSION.MINOR == 2
+        if Rails::VERSION::MINOR == 2
           config.exceptions_app = PublicExceptions
         else
           initializer "public_rescue.add_middleware" do |app|
