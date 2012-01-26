@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{public_rescue}
-  s.version = "0.3.1"
+  s.name = "public_rescue"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Cyril Picard}]
-  s.date = %q{2011-07-27}
-  s.description = %q{PublicRescue is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method.}
-  s.email = %q{Cyril@picard.ch}
+  s.authors = ["Cyril Picard"]
+  s.date = "2012-01-26"
+  s.description = "PublicRescue is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method."
+  s.email = "Cyril@picard.ch"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -32,17 +32,18 @@ Gem::Specification.new do |s|
     "lib/generators/public_rescue/views_generator.rb",
     "lib/generators/template/controller.rb",
     "lib/public_rescue.rb",
+    "lib/public_rescue/public_exceptions.rb",
     "lib/public_rescue/rails.rb",
     "lib/public_rescue/show_exceptions.rb",
     "public_rescue.gemspec",
     "test/helper.rb",
     "test/test_public_rescue.rb"
   ]
-  s.homepage = %q{http://github.com/cyrilpic/public_rescue}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.5}
-  s.summary = %q{Rails3 gem for displaying dynamic error pages.}
+  s.homepage = "http://github.com/cyrilpic/public_rescue"
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.10"
+  s.summary = "Rails3 gem for displaying dynamic error pages."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
