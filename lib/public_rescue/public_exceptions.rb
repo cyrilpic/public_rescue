@@ -30,7 +30,7 @@ module PublicRescue
     private
     
     def render(status, body)
-      [status, {'Content-Type' => "text/html; charset=#{Response.default_charset}", 'Content-Length' => body.bytesize.to_s}, [body]]
+      [status, {'Content-Type' => "text/html; charset=#{ActionDispatch::Response.default_charset}", 'Content-Length' => body.bytesize.to_s}, [body]]
     end
   end
 end
