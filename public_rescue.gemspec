@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "public_rescue"
-  s.version = "0.4.1"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cyril Picard"]
-  s.date = "2012-02-01"
+  s.date = "2014-01-30"
   s.description = "PublicRescue is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method."
   s.email = "Cyril@picard.ch"
   s.extra_rdoc_files = [
@@ -42,31 +42,31 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/cyrilpic/public_rescue"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
-  s.summary = "Rails3 gem for displaying dynamic error pages."
+  s.rubygems_version = "2.0.6"
+  s.summary = "Rails gem for displaying dynamic error pages."
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0"])
+      s.add_runtime_dependency(%q<rails>, [">= 3.0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.6.0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.3.5"])
+      s.add_development_dependency(%q<jeweler>, ["~> 2.0.0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["~> 3.0"])
+      s.add_dependency(%q<rails>, [">= 3.0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<bundler>, ["~> 1.3.5"])
+      s.add_dependency(%q<jeweler>, ["~> 2.0.0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 3.0"])
+    s.add_dependency(%q<rails>, [">= 3.0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<bundler>, ["~> 1.3.5"])
+    s.add_dependency(%q<jeweler>, ["~> 2.0.0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
   end
 end
 
