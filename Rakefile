@@ -15,7 +15,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "public_rescue"
   gem.homepage = "http://github.com/cyrilpic/public_rescue"
   gem.license = "MIT"
-  gem.summary = %Q{Rails3 gem for displaying dynamic error pages.}
+  gem.summary = %Q{Rails gem for displaying dynamic error pages.}
   gem.description = %Q{PublicRescue is a gem for rails application who want to display dynamic error pages. It creates a new Rack middleware which replaces ActionDispatch::ShowExceptions and overwrites the rescue_action_in_public method.}
   gem.email = "Cyril@picard.ch"
   gem.authors = ["Cyril Picard"]
@@ -34,21 +34,20 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+desc "Code coverage detail"
+task :simplecov do
+  ENV['COVERAGE'] = "true"
+  Rake::Task['test'].execute
 end
 
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "errorlogic #{version}"
+  rdoc.title = "hello #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
