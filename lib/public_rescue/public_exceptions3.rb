@@ -1,11 +1,11 @@
 module PublicRescue
-  class PublicExceptions
-    
+  class PublicExceptions3
+
     def call(env)
-      
+
       exception = env["action_dispatch.exception"]
       wrapper = ActionDispatch::ExceptionWrapper.new(env, exception)
-      
+
       request = ActionDispatch::Request.new(env)
       status = wrapper.status_code
       exception_details = {
@@ -26,9 +26,9 @@ module PublicRescue
       response = controller.action(action).call(request.env).last
       render(status, response.body)
     end
-    
+
     private
-    
+
     def render(status, body)
       [status, {'Content-Type' => "text/html; charset=#{ActionDispatch::Response.default_charset}", 'Content-Length' => body.bytesize.to_s}, [body]]
     end
